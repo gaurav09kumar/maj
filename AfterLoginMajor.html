@@ -1,0 +1,454 @@
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script>
+
+     
+
+      	window.onload = function() {
+            loaddata();
+        };
+		function loaddata(){
+				var url = "https://techratstudio.000webhostapp.com/api/read_all.php";
+				$.getJSON(url, function(data) {
+                    var val= data;
+                  var humid=(data['demo1'][(Object.keys(data['demo1']).length)-1]['wintemp']);
+                   var temper=(data['demo1'][(Object.keys(data['demo1']).length)-1]['oiltemp']);
+                   var oillev=(data['demo1'][(Object.keys(data['demo1']).length)-1]['oillevel']);
+
+                   document.getElementById("temperature").innerHTML = "<img src = 'temperature.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " +temper;
+                   document.getElementById("humidity").innerHTML = "<img src = 'winding.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  "+humid;
+                   document.getElementById("oill").innerHTML = "<img src = 'oil.gif' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  "+oillev;
+
+					console.log(data['demo1'][(Object.keys(data['demo1']).length)-1]['oil_temp']);
+				});
+
+        }
+        window.setInterval(function(){
+        loaddata();
+            }, 5000);
+
+            
+      </script>
+  <style>
+
+ .intro{
+    background-image: url(bucky.png);
+    image-orientation:initial;
+    display:block;
+   width: 100%;
+   height: 100%;
+     background-size: cover;
+     opacity: 0.9;
+     margin-bottom: 0px;
+     margin-top: 100px;
+ }
+ .nav > li > a >span:hover{
+    color:goldenrod;
+    text-decoration: underline;
+    text-underline-position: below;
+    
+
+}
+.nav >li:hover
+{
+    color: #333;
+}
+ .logo
+ {
+    
+     border-radius: 50%;
+     margin-top: 0px;
+     height: 20%;
+     border: 5px solid orange;
+ }
+ .down
+ {
+     margin-top: 30px;
+    position: relative;
+ }
+ .down:hover
+ {
+  
+ }
+ .heading
+ {
+     color: black;
+     margin-top: 50px;
+     font-size: 35px;
+ }
+ .heading2
+ {
+    color: black;
+     margin-top:15px;
+     font-size: 30px;
+ }
+ .navbar
+    {
+        background-color:#333;
+        height: auto;
+        box-shadow: 0 4px 8px 0 rgba(245, 114, 6, 0.966), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+
+    .navbar-brand {
+  background: url(Srijay.png) center / contain no-repeat;
+  width: 200px;
+}
+
+
+ @media screen and (max-width: 750px) {
+    .down {
+        -ms-flex: 100%;
+        flex: 100%;
+        width: 10%;
+        height: 10%;
+        margin:auto;
+        
+    }
+ }
+    #tracking
+    {
+       
+;
+    }
+
+.orange
+{
+    color: orange;
+}
+.resp-iframe {
+    position: relative;
+    overflow: hidden;
+    width:450px; 
+    height: 260px;
+   margin: auto;
+
+}
+@media screen and (max-width: 507px) {
+    .resp-iframe {
+        -ms-flex: 100%;
+        flex: 100%;
+        width:430px;
+        height: 230px;
+        margin:auto;
+        
+    }
+ }
+ @media screen and (max-width: 992px) {
+    .embed-responsive-16by9{
+        padding-top:0px;
+padding-bottom:260px;
+box-shadow: 0 4px 8px 0 rgba(245, 113, 6, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+width: 60%;
+margin-top: 20px;
+        
+    }
+    .coli
+    {
+        margin: auto;
+    }
+    .center {
+		
+		background: grey;
+		position: relative;
+        border-radius:25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 40%;
+        margin: auto;
+	
+	}
+ }
+
+ @media screen and (max-width: 769px) {
+    .srijay .img {
+        -ms-flex: 100%;
+        flex: 100%;
+        width: 100%;
+        height: 70%;
+        margin:auto;
+        
+    }
+    .coli{
+       
+      
+    }
+    
+ }
+ .embed-responsive-16by9
+{
+padding-top:0px;
+padding-bottom:260px;
+box-shadow: 0 4px 8px 0 rgba(245, 113, 6, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin-right:100px;
+}
+.embed-responsive-item
+{
+    margin: auto;
+}
+
+.embed-responsive-23by9
+{
+    padding-top:0px;
+padding-bottom:260px;
+margin-top: 30px;
+margin-right:0px;
+align-items: center;
+height: 50%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 633px) {
+   .header1
+   {
+       font-size: 20px;
+   }
+   .header2
+   {
+       font-size: 20px;
+   }
+    
+ }
+
+
+
+ .center {
+		
+		background:lightgray;
+		position: relative;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+	}
+
+	.form{
+		padding: 20px 20px;
+	}
+   
+    .header1{
+    	color:black;
+    }
+    .header2{
+    	color:black;
+    }
+    p.detail { color:goldenrod;font-size:40px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+    span.name { color:goldenrod;font-size:40px ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif}
+    .foot .container-fluid
+{
+    background-color: #333;
+   margin: 0px 0px;
+   padding: 0px 0px;
+    margin-top: 40px;    
+}
+.contalmer{
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    float: right;
+    transform: translate(-50%, -50%);
+}
+.jumbotron
+{
+    background: none;
+    border-radius:14 ;
+}
+.imgopac
+{
+opacity: 0.5;
+height: 100%;
+}
+
+@media screen and (max-width: 965px)
+{
+.heading {
+    font-size: 35px;
+}
+.heading2
+{
+font-size:40px;
+}
+}
+@media screen and (max-width: 740px)
+{
+.heading {
+    font-size: 30px;
+}
+.heading2
+{
+font-size:35px;
+}
+}
+
+  </style>
+  
+</head>
+<body data-spy="scroll" data-target="#myNavbar" style="">
+        <div class="container-fluid">
+                <div class="contalmer ">
+                        <img class="img-responsive imgopac" src="buckyy.jpeg" alt="Snow" style="width:100%;">
+                        <div class="centered jumbotron ">
+                                <h1 class="text-center heading" style="margin-top: 10px;color:black"> Welcome to</h1>
+
+                                <center> <p class="detail ">SriJay <span class="name">TechInsights</span> </p> </center>                
+                                  <h2 class="text-center heading2 " > Smart Grid Tracking </h2>
+                                  <h2 class="text-center  "style="color:black;font-size:20px;" > Click here to track the vitals</h2>
+                          <a href="#tracking"><img src="downy.gif"class="center-block down " style="background" width="15%" height="15%" ></a>
+                        </div>
+                      </div>
+     
+             
+
+                <div class="navigation ">
+                        <nav class="navbar navbar-fixed-top" id="navbat"  >
+                                <div class="container-fluid" >
+                                  <div class="navbar-header " style="margin-right: 20px">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+                                            <span class="glyphicon glyphicon-triangle-bottom orange"></span>
+                                                            
+                                    </button>
+                                    <div class="srijay">
+                                    <span class="navbar-brand" style="margin-left: 10px;"></span>
+                                </div>
+                                  </div>
+                                 
+                                  <div class="collapse navbar-collapse" id="myNavbar" style="margin-top: 40px; margin-right:0px; ">
+                                    <ul class="nav navbar-nav navbar-right">
+                                            <li class=""><a class=" " href="#tracking" style="color: white;"><span class="glyphicon glyphicon-list-alt "style="margin-right:2px;font-size:16px;">Statistics</span></a></li> 
+                                         <!-- <li class=""><a class="" href="#stats" style="color: white"><span class="glyphicon glyphicon-eye-open "style="margin-right:2px;font-size:16px;">Vitals</span></a></li> -->  
+                                            <li class=""><a class="" href="#loc" style="color: white"><span class="glyphicon glyphicon-map-marker "style="margin-right:2px;font-size:16px;">Location</span></a></li> 
+                                      <li class=""><a href="index.html" class=" " style="color: white"><span class="glyphicon glyphicon-log-out "style="margin-right:2px;font-size:16px;">Logout</span> </a></li>  
+                                    </ul> 
+                                          </div>
+                                        
+                                  </div>
+                               
+                              </nav>
+                            </div>
+
+         <section id="tracking" >
+                    <div class="container">
+                                <div class="row" style="margin-top: 100px;" >
+                                        <center> <p class="detail ">Tranformer Vital <span class="name">Statistics</span> </p> </center>                               
+                                      </div>
+                                <div class="row ali" style="margin-top: 50px;">
+                                    <div class="coli">
+                                        <div class="col-md-6 ">
+                                            <h1 class="text-center" style="color: black">Oil Temperature</h1>
+                                        <div class="embed-responsive embed-responsive-16by9" style=
+                                        "border:2px solid orange;    margin-right: 35px;
+                                        margin-left: 50px;">
+                                       <iframe class="embed-responsive-item" src="https://thingspeak.com/channels/700950/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                                        </div>
+                                        </div>
+                                    </div> 
+                                    <div class="coli"> 
+                                        <div class="col-md-6 ">
+                                                <h1 class="text-center" style="color: black">Winding Temperature</h1>
+                                        <div class="embed-responsive embed-responsive-16by9" style=
+                                        "border:2px solid blue;    margin-left: 100px;
+                                        margin-right: 10px;">
+                                        <center>  <iframe class="embed-responsive-item" src="https://thingspeak.com/channels/700950/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe></center>
+                                        </div>
+                                        </div>
+                                    </div>
+                                        </div> 
+                                        <div class="row">
+                                            
+                                                <div class="col-md-3"></div>
+                                                <div class=""> 
+                                                        <div class="col-md-6 ">
+                                                                <h1 class="text-center" style="color: black">Oil Level</h1>
+                                                        <div class="embed-responsive embed-responsive-16by9" style=
+                                                        "border:2px solid blue;    margin-left: 50px;
+                                                        margin-right: 50px;">
+                                                        <center>  <iframe class="embed-responsive-item" src="https://thingspeak.com/channels/700950/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe></center>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3"></div>
+
+
+                                        </div>   
+                     </div>
+                    </section>
+                   <!--<section id="stats" >
+                     <div class="row" style="margin-top: 30px">
+                            <h1 class="detail"style="color:goldenrod;text-align:center">Transformer Vitals Tracking</h1>
+                         <div class="col-md-4"></div>
+                         <div class="col-md-4">          
+                     <div class="center">
+
+                            <div align="center" class="form" style="border: 2px solid goldenrod;margin-top: 40px;">
+                                <h1 class="header1">Oil Temperature</h1>
+                                 <p style = 'line-height: 60px;font-family: Helvetica;color: black;font-size: 30px;' id="temperature">
+                                     <img src = 'temperature.png' height="60px" width="60px" style='vertical-align: middle' /> 00.00
+                                 </p>
+                                 <h1 class="header2">Winding temperature</h1>
+                                 <p style = 'line-height: 60px;font-family: Helvetica;color: black;font-size: 30px;' id="humidity">
+                                     <img src = 'Winding.png' height="60px" width="60px" style='vertical-align: middle' /> 00.00
+                                 </p>
+                                 <h1 class="header2">Oil Level</h1>
+                                 <p style = 'line-height: 60px;font-family: Helvetica;color: black;font-size: 30px;' id="oill">
+                                     <img src = 'oil.gif' height="60px" width="60px" style='vertical-align: middle' /> 00.00
+                                 </p>
+                             </div>
+                         </div>
+                        </div>
+                        </div>
+                    </section>   --> 
+                    <section id="loc" style="margin-top:0px;">
+                        <div class="row container-fluid">
+                            <div style="margin-top: 30px;">
+                                <center> <p class="detail ">Live <span class="name">Location</span> </p> </center>  
+                            </div>
+
+                                <div class="embed-responsive embed-responsive-23by9" style=
+                                "border:2px solid blue;margin-top: 20px;">
+                                <center>  <iframe class="embed-responsive-item" src="https://aravindkasyap.github.io/mapss/"></iframe></center>
+                                </div>
+                        </div>
+
+                    </section>
+                          
+                           
+
+                            <section class="foot" >
+                                <div class="container-fluid">
+                                    <footer id="footer" style="border-top:solid goldenrod;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                            <!-- Widgetized footer -->
+                                        <footer id="footer-widgets">
+                                            <div class="footer footer-style-cols_1">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        
+                                <h4 style="text-align: center; margin-top: 20px;font-weight:400;"> <a href="http://www.srijaytech.com/" style="font-weight:400;">About SriJay</a>  |  <a href="http://www.srijaytech.com/contact-us/" style="font-weight:400;">Contact Us</a></h4>
+                                
+                                <p style="text-align: center; color: #f2f2f2; margin-top: 20px;">© 2016 SriJay Techinsights Private Limited. All Rights Reserved.</p></div>
+                                        <div class="clearfix"></div></div></div>					</div>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                    </div>
+                                </section>
+
+                            
+                </div>
+
+</body>
+</html>
